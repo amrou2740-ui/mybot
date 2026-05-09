@@ -1,10 +1,12 @@
 import asyncio
 import logging
 import os
+import sys
 from telegram.ext import Application, CommandHandler
 from config import TELEGRAM_TOKEN, OUTPUT_DIR
 from orchestrator import run_thesis_pipeline
 
+sys.stdout.reconfigure(encoding='utf-8')
 logging.basicConfig(level=logging.INFO)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
